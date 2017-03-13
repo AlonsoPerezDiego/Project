@@ -5,18 +5,16 @@
  */
 package windows;
 
-import classpackage.Battle;
-
 /**
  *
  * @author Diego
  */
-public class Menu extends javax.swing.JFrame {
+public class Characters extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu
+     * Creates new form Characters
      */
-    public Menu() {
+    public Characters() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -31,8 +29,10 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         exit = new javax.swing.JButton();
-        combat = new javax.swing.JButton();
-        info = new javax.swing.JButton();
+        back = new javax.swing.JButton();
+        boy = new javax.swing.JButton();
+        choose = new javax.swing.JLabel();
+        girl = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,23 +49,30 @@ public class Menu extends javax.swing.JFrame {
         });
         getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 10, -1, -1));
 
-        combat.setBackground(new java.awt.Color(153, 153, 153));
-        combat.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        combat.setForeground(new java.awt.Color(0, 0, 204));
-        combat.setText("START COMBAT");
-        combat.addActionListener(new java.awt.event.ActionListener() {
+        back.setBackground(new java.awt.Color(0, 0, 0));
+        back.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        back.setForeground(new java.awt.Color(255, 255, 255));
+        back.setText("BACK");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combatActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
-        getContentPane().add(combat, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 1240, 140));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        info.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        info.setText("INFORMATION");
-        getContentPane().add(info, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 1240, 140));
+        boy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Boy.png"))); // NOI18N
+        getContentPane().add(boy, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 380, -1));
+
+        choose.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        choose.setForeground(new java.awt.Color(204, 0, 0));
+        choose.setText("CHOOSE A CHARACTER");
+        getContentPane().add(choose, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, -1, -1));
+
+        girl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Girl.jpg"))); // NOI18N
+        getContentPane().add(girl, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, 380, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background.jpg"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -74,11 +81,11 @@ public class Menu extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitActionPerformed
 
-    private void combatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combatActionPerformed
-        Characters window = new Characters();
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        Menu window = new Menu();
         window.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_combatActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -97,29 +104,30 @@ public class Menu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Characters.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Characters.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Characters.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Characters.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                new Characters().setVisible(true);
             }
-            Battle combat = new Battle(190,45,28,160,40,25);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back;
     private javax.swing.JLabel background;
-    private javax.swing.JButton combat;
+    private javax.swing.JButton boy;
+    private javax.swing.JLabel choose;
     private javax.swing.JButton exit;
-    private javax.swing.JButton info;
+    private javax.swing.JButton girl;
     // End of variables declaration//GEN-END:variables
 }
