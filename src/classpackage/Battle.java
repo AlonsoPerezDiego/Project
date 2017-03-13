@@ -13,19 +13,22 @@ public class Battle {
     
     private int myHP, myAttack, myDefense, myLostHP, rHP, rAttack, rDefense, rLostHP;
     private float myMultiplier, rMultiplier;
+    private boolean victory, defeat;
     
 
-    public Battle(int myHP, int myAttack, int myDefense, int myLostHP, float myMultiplier, int rHP, int rAttack, int rDefense, int rLostHP, float rMultiplier) {
+    public Battle(int myHP, int myAttack, int myDefense, int rHP, int rAttack, int rDefense) {
         this.myHP = myHP;
         this.myAttack = myAttack;
         this.myDefense = myDefense;
-        this.myLostHP = myLostHP;
-        this.myMultiplier = myMultiplier;
+        this.myLostHP = myHP;
+        this.myMultiplier = 1;
         this.rHP = rHP;
         this.rAttack = rAttack;
         this.rDefense = rDefense;
-        this.rLostHP = rLostHP;
-        this.rMultiplier = rMultiplier;
+        this.rLostHP = rHP;
+        this.rMultiplier = 1;
+        victory=false;
+        defeat=false;
     }
     
     public void fight(int myDamage, int rDamage){
@@ -43,12 +46,26 @@ public class Battle {
     
     public void imFaster(int myDamage, int rDamage){
         rLostHP = (int)(rLostHP - ((myAttack/rDefense)*(myDamage*myMultiplier)));
-        myLostHP = (int)(myLostHP - ((rAttack/myDefense)*(rDamage*rMultiplier)));
+        if(rLostHP>0){
+            myLostHP = (int)(myLostHP - ((rAttack/myDefense)*(rDamage*rMultiplier)));
+            if(myLostHP<=0){
+                defeat=true;
+            }
+        }else{
+            victory = true;
+        }
     }
     
     public void rIsFaster(int myDamage, int rDamage){
         myLostHP = (int)(myLostHP - ((rAttack/myDefense)*(rDamage*rMultiplier)));
-        rLostHP = (int)(rLostHP - ((myAttack/rDefense)*(myDamage*myMultiplier)));
+        if(myLostHP>0){
+            rLostHP = (int)(rLostHP - ((myAttack/rDefense)*(myDamage*myMultiplier)));
+            if(rLostHP<=0){
+                victory=true;
+            }
+        }else{
+            defeat=true;
+        }
     }
     
     public void multiplier(){
