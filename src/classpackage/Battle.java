@@ -5,8 +5,6 @@
  */
 package classpackage;
 
-import timer.Time;
-
 /**
  *
  * @author Diego
@@ -15,6 +13,7 @@ public class Battle {
     
     private int myHP, myAttack, myDefense, myLostHP, rHP, rAttack, rDefense, rLostHP;
     private float myMultiplier, rMultiplier;
+    
 
     public Battle(int myHP, int myAttack, int myDefense, int myLostHP, float myMultiplier, int rHP, int rAttack, int rDefense, int rLostHP, float rMultiplier) {
         this.myHP = myHP;
@@ -44,13 +43,11 @@ public class Battle {
     
     public void imFaster(int myDamage, int rDamage){
         rLostHP = (int)(rLostHP - ((myAttack/rDefense)*(myDamage*myMultiplier)));
-        Time.waitOneSec();
         myLostHP = (int)(myLostHP - ((rAttack/myDefense)*(rDamage*rMultiplier)));
     }
     
     public void rIsFaster(int myDamage, int rDamage){
         myLostHP = (int)(myLostHP - ((rAttack/myDefense)*(rDamage*rMultiplier)));
-        Time.waitOneSec();
         rLostHP = (int)(rLostHP - ((myAttack/rDefense)*(myDamage*myMultiplier)));
     }
     
