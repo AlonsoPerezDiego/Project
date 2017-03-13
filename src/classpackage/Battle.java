@@ -11,4 +11,6 @@ package classpackage;
  */
 public class Battle {
     
+    private int myHP, myAttack, myDefense, myLostHP, myMultipier, rHP, rAttack, rDefense, rLostHP, rMultiplier;
+    
 }
