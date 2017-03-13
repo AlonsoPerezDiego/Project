@@ -12,5 +12,18 @@ package classpackage;
 public class Battle {
     
     private int myHP, myAttack, myDefense, myLostHP, myMultipier, rHP, rAttack, rDefense, rLostHP, rMultiplier;
+
+    public Battle(int myHP, int myAttack, int myDefense, int myLostHP, int myMultipier, int rHP, int rAttack, int rDefense, int rLostHP, int rMultiplier) {
+        this.myHP = myHP;
+        this.myAttack = myAttack;
+        this.myDefense = myDefense;
+        this.myLostHP = myLostHP;
+        this.myMultipier = myMultipier;
+        this.rHP = rHP;
+        this.rAttack = rAttack;
+        this.rDefense = rDefense;
+        this.rLostHP = rLostHP;
+        this.rMultiplier = rMultiplier;
+    }
     
 }
