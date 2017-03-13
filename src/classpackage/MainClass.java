@@ -5,6 +5,8 @@
  */
 package classpackage;
 
+import windows.Menu;
+
 /**
  *
  * @author Diego
@@ -15,7 +17,8 @@ public class MainClass {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Menu obj = new Menu();
+        obj.setVisible(true);
     }
     
 }
