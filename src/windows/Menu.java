@@ -5,6 +5,8 @@
  */
 package windows;
 
+import classpackage.Battle;
+
 /**
  *
  * @author Diego
@@ -99,6 +101,7 @@ public class Menu extends javax.swing.JFrame {
             public void run() {
                 new Menu().setVisible(true);
             }
+            Battle combat = new Battle(190,45,28,160,40,25);
         });
     }
 
