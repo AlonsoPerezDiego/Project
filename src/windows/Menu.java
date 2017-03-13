@@ -62,6 +62,11 @@ public class Menu extends javax.swing.JFrame {
 
         info.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         info.setText("INFORMATION");
+        info.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                infoActionPerformed(evt);
+            }
+        });
         getContentPane().add(info, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 1240, 140));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background.jpg"))); // NOI18N
@@ -79,6 +84,12 @@ public class Menu extends javax.swing.JFrame {
         window.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_combatActionPerformed
+
+    private void infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoActionPerformed
+        Information window = new Information();
+        window.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_infoActionPerformed
 
     /**
      * @param args the command line arguments
