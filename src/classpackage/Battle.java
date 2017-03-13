@@ -26,4 +26,17 @@ public class Battle {
         this.rMultiplier = rMultiplier;
     }
     
+    public void fight(int myDamage, int rDamege){
+        int speed;
+        do{
+            speed = (int)(Math.random()*10);
+        }while(speed>1);
+        if(speed==1){
+            
+        }else{
+            
+        }
+    }
+    
+    
 }
