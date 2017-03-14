@@ -32,6 +32,8 @@ public class Characters extends javax.swing.JFrame {
         back = new javax.swing.JButton();
         boy = new javax.swing.JButton();
         choose = new javax.swing.JLabel();
+        name = new javax.swing.JTextField();
+        nameL = new javax.swing.JLabel();
         girl = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
@@ -61,15 +63,38 @@ public class Characters extends javax.swing.JFrame {
         getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         boy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Boy.png"))); // NOI18N
-        getContentPane().add(boy, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 380, -1));
+        boy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boyActionPerformed(evt);
+            }
+        });
+        getContentPane().add(boy, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 380, -1));
 
         choose.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         choose.setForeground(new java.awt.Color(204, 0, 0));
         choose.setText("CHOOSE A CHARACTER");
-        getContentPane().add(choose, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, -1, -1));
+        getContentPane().add(choose, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, -1, -1));
+
+        name.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 220, 130, 30));
+
+        nameL.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        nameL.setText("     Enter your name:");
+        nameL.setOpaque(true);
+        getContentPane().add(nameL, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, 130, 30));
 
         girl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Girl.jpg"))); // NOI18N
-        getContentPane().add(girl, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, 380, -1));
+        girl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                girlActionPerformed(evt);
+            }
+        });
+        getContentPane().add(girl, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 110, 380, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background.jpg"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 720));
@@ -86,6 +111,22 @@ public class Characters extends javax.swing.JFrame {
         window.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_backActionPerformed
+
+    private void boyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boyActionPerformed
+        Combat window = new Combat();
+        window.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_boyActionPerformed
+
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameActionPerformed
+
+    private void girlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_girlActionPerformed
+        Combat window = new Combat();
+        window.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_girlActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,5 +170,7 @@ public class Characters extends javax.swing.JFrame {
     private javax.swing.JLabel choose;
     private javax.swing.JButton exit;
     private javax.swing.JButton girl;
+    private javax.swing.JTextField name;
+    private javax.swing.JLabel nameL;
     // End of variables declaration//GEN-END:variables
 }
