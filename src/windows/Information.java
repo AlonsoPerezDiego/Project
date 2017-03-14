@@ -16,6 +16,7 @@ public class Information extends javax.swing.JFrame {
      */
     public Information() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -36,6 +37,7 @@ public class Information extends javax.swing.JFrame {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nerite.setBackground(new java.awt.Color(255, 255, 255));
@@ -108,11 +110,15 @@ public class Information extends javax.swing.JFrame {
     }//GEN-LAST:event_exitActionPerformed
 
     private void neriteBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_neriteBActionPerformed
-        // TODO add your handling code here:
+        Nerite window = new Nerite();
+        window.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_neriteBActionPerformed
 
     private void hakonmyoBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hakonmyoBActionPerformed
-        // TODO add your handling code here:
+        Hakonmyo window = new Hakonmyo();
+        window.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_hakonmyoBActionPerformed
 
     /**
