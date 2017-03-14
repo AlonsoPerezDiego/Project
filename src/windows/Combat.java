@@ -16,6 +16,7 @@ public class Combat extends javax.swing.JFrame {
      */
     public Combat() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -32,6 +33,7 @@ public class Combat extends javax.swing.JFrame {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         giveUp.setBackground(new java.awt.Color(0, 0, 0));
