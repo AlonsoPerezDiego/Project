@@ -56,7 +56,7 @@ public class Hakonmyo extends javax.swing.JFrame {
 
         menu.setBackground(new java.awt.Color(0, 153, 0));
         menu.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        menu.setText("Menu");
+        menu.setText("MENU");
         menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuActionPerformed(evt);
