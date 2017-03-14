@@ -16,6 +16,7 @@ public class Victory extends javax.swing.JFrame {
      */
     public Victory() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -31,6 +32,7 @@ public class Victory extends javax.swing.JFrame {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Victory.png"))); // NOI18N
