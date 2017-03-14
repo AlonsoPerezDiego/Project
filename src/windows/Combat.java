@@ -28,6 +28,8 @@ public class Combat extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        nerite = new javax.swing.JLabel();
+        hakonmyo = new javax.swing.JLabel();
         attack1 = new javax.swing.JButton();
         attack2 = new javax.swing.JButton();
         attack3 = new javax.swing.JButton();
@@ -40,13 +42,19 @@ public class Combat extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        nerite.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/NeriteP1.png"))); // NOI18N
+        getContentPane().add(nerite, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 320, 250));
+
+        hakonmyo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Hakonmyo.png"))); // NOI18N
+        getContentPane().add(hakonmyo, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 90, 260, 270));
+
         attack1.setText("jButton1");
         attack1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 attack1ActionPerformed(evt);
             }
         });
-        getContentPane().add(attack1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 490, 230, 90));
+        getContentPane().add(attack1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 500, 220, 80));
 
         attack2.setText("jButton2");
         attack2.addActionListener(new java.awt.event.ActionListener() {
@@ -54,7 +62,7 @@ public class Combat extends javax.swing.JFrame {
                 attack2ActionPerformed(evt);
             }
         });
-        getContentPane().add(attack2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 490, 230, 90));
+        getContentPane().add(attack2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 500, 220, 80));
 
         attack3.setText("jButton3");
         attack3.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +70,7 @@ public class Combat extends javax.swing.JFrame {
                 attack3ActionPerformed(evt);
             }
         });
-        getContentPane().add(attack3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 580, 230, 90));
+        getContentPane().add(attack3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 580, 220, 80));
 
         attack4.setText("jButton4");
         attack4.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +78,7 @@ public class Combat extends javax.swing.JFrame {
                 attack4ActionPerformed(evt);
             }
         });
-        getContentPane().add(attack4, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 580, 230, 90));
+        getContentPane().add(attack4, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 580, 220, 80));
 
         giveUp.setBackground(new java.awt.Color(0, 0, 0));
         giveUp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -168,5 +176,7 @@ public class Combat extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JButton exit;
     private javax.swing.JButton giveUp;
+    private javax.swing.JLabel hakonmyo;
+    private javax.swing.JLabel nerite;
     // End of variables declaration//GEN-END:variables
 }
