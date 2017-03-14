@@ -29,6 +29,7 @@ public class Defeat extends javax.swing.JFrame {
     private void initComponents() {
 
         defeat = new javax.swing.JLabel();
+        exit = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,6 +44,16 @@ public class Defeat extends javax.swing.JFrame {
         });
         getContentPane().add(defeat, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, -1, -1));
 
+        exit.setBackground(new java.awt.Color(255, 0, 0));
+        exit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        exit.setText("EXIT");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 20, -1, -1));
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background.jpg"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -54,6 +65,10 @@ public class Defeat extends javax.swing.JFrame {
         window.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_defeatMouseClicked
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,5 +108,6 @@ public class Defeat extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
     private javax.swing.JLabel defeat;
+    private javax.swing.JButton exit;
     // End of variables declaration//GEN-END:variables
 }
