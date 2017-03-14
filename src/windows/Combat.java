@@ -28,6 +28,10 @@ public class Combat extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        attack1 = new javax.swing.JButton();
+        attack2 = new javax.swing.JButton();
+        attack3 = new javax.swing.JButton();
+        attack4 = new javax.swing.JButton();
         giveUp = new javax.swing.JButton();
         exit = new javax.swing.JButton();
         background = new javax.swing.JLabel();
@@ -35,6 +39,38 @@ public class Combat extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        attack1.setText("jButton1");
+        attack1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                attack1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(attack1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 490, 230, 90));
+
+        attack2.setText("jButton2");
+        attack2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                attack2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(attack2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 490, 230, 90));
+
+        attack3.setText("jButton3");
+        attack3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                attack3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(attack3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 580, 230, 90));
+
+        attack4.setText("jButton4");
+        attack4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                attack4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(attack4, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 580, 230, 90));
 
         giveUp.setBackground(new java.awt.Color(0, 0, 0));
         giveUp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -73,6 +109,22 @@ public class Combat extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitActionPerformed
 
+    private void attack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attack4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_attack4ActionPerformed
+
+    private void attack3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attack3ActionPerformed
+        
+    }//GEN-LAST:event_attack3ActionPerformed
+
+    private void attack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attack2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_attack2ActionPerformed
+
+    private void attack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attack1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_attack1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -109,6 +161,10 @@ public class Combat extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton attack1;
+    private javax.swing.JButton attack2;
+    private javax.swing.JButton attack3;
+    private javax.swing.JButton attack4;
     private javax.swing.JLabel background;
     private javax.swing.JButton exit;
     private javax.swing.JButton giveUp;
