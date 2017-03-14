@@ -16,6 +16,7 @@ public class Hakonmyo extends javax.swing.JFrame {
      */
     public Hakonmyo() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -28,15 +29,50 @@ public class Hakonmyo extends javax.swing.JFrame {
     private void initComponents() {
 
         pictureFront = new javax.swing.JLabel();
+        back = new javax.swing.JButton();
+        menu = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
         info = new javax.swing.JLabel();
         name = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pictureFront.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/HakonmyoInfo.png"))); // NOI18N
         getContentPane().add(pictureFront, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, -1, -1));
+
+        back.setBackground(new java.awt.Color(0, 0, 0));
+        back.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        back.setForeground(new java.awt.Color(255, 255, 255));
+        back.setText("BACK");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        menu.setBackground(new java.awt.Color(0, 153, 0));
+        menu.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        menu.setText("Menu");
+        menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
+
+        exit.setBackground(new java.awt.Color(255, 0, 0));
+        exit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        exit.setText("EXIT");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 20, -1, -1));
 
         info.setOpaque(true);
         getContentPane().add(info, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 460, 100));
@@ -50,6 +86,22 @@ public class Hakonmyo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
+        Menu window = new Menu();
+        window.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_menuActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        Information window = new Information();
+        window.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_backActionPerformed
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -87,8 +139,11 @@ public class Hakonmyo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back;
     private javax.swing.JLabel background;
+    private javax.swing.JButton exit;
     private javax.swing.JLabel info;
+    private javax.swing.JButton menu;
     private javax.swing.JLabel name;
     private javax.swing.JLabel pictureFront;
     // End of variables declaration//GEN-END:variables
