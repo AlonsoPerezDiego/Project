@@ -108,7 +108,7 @@ public class Combat extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void giveUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_giveUpActionPerformed
-        Menu window = new Menu();
+        Defeat window = new Defeat();
         window.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_giveUpActionPerformed
