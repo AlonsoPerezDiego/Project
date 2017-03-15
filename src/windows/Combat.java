@@ -38,6 +38,8 @@ public class Combat extends javax.swing.JFrame {
         attack4 = new javax.swing.JButton();
         giveUp = new javax.swing.JButton();
         exit = new javax.swing.JButton();
+        mLHP = new javax.swing.JLabel();
+        rLHP = new javax.swing.JLabel();
         rHP = new javax.swing.JLabel();
         hakonmyoname = new javax.swing.JLabel();
         myHp = new javax.swing.JLabel();
@@ -111,33 +113,41 @@ public class Combat extends javax.swing.JFrame {
         });
         getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 10, -1, -1));
 
+        mLHP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        mLHP.setText("190");
+        getContentPane().add(mLHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 518, 30, 20));
+
+        rLHP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        rLHP.setText("160");
+        getContentPane().add(rLHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, -1, -1));
+
         rHP.setBackground(new java.awt.Color(255, 255, 255));
         rHP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        rHP.setText("jLabel3");
+        rHP.setText("/160");
         rHP.setOpaque(true);
-        getContentPane().add(rHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 100, 60));
+        getContentPane().add(rHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, 70, 60));
 
         hakonmyoname.setBackground(new java.awt.Color(255, 255, 255));
         hakonmyoname.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         hakonmyoname.setText("Hakonmyo");
         hakonmyoname.setOpaque(true);
-        getContentPane().add(hakonmyoname, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 190, 80));
+        getContentPane().add(hakonmyoname, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 200, 80));
 
         myHp.setBackground(new java.awt.Color(255, 255, 255));
         myHp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        myHp.setText("jLabel2");
+        myHp.setText("/190");
         myHp.setOpaque(true);
-        getContentPane().add(myHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 500, 120, 60));
+        getContentPane().add(myHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 500, 80, 60));
 
         neriteName.setBackground(new java.awt.Color(255, 255, 255));
         neriteName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         neriteName.setText("Nerite");
         neriteName.setOpaque(true);
-        getContentPane().add(neriteName, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 500, 180, 80));
+        getContentPane().add(neriteName, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 500, 200, 80));
 
         background.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background.jpg"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 720));
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -155,21 +165,29 @@ public class Combat extends javax.swing.JFrame {
     private void attack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attack4ActionPerformed
         combat.fight(30, enemyDamage());
         endBattle(combat.isVictory(),combat.isDefeat());
+        mLHP.setText(String.valueOf(combat.getMyLostHP()));
+        rLHP.setText(String.valueOf(combat.getrLostHP()));
     }//GEN-LAST:event_attack4ActionPerformed
 
     private void attack3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attack3ActionPerformed
         combat.fight(40, enemyDamage());
         endBattle(combat.isVictory(),combat.isDefeat());
+        mLHP.setText(String.valueOf(combat.getMyLostHP()));
+        rLHP.setText(String.valueOf(combat.getrLostHP()));
     }//GEN-LAST:event_attack3ActionPerformed
 
     private void attack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attack2ActionPerformed
         combat.fight(45, enemyDamage());
         endBattle(combat.isVictory(),combat.isDefeat());
+        mLHP.setText(String.valueOf(combat.getMyLostHP()));
+        rLHP.setText(String.valueOf(combat.getrLostHP()));
     }//GEN-LAST:event_attack2ActionPerformed
 
     private void attack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attack1ActionPerformed
         combat.fight(25, enemyDamage());
         endBattle(combat.isVictory(),combat.isDefeat());
+        mLHP.setText(String.valueOf(combat.getMyLostHP()));
+        rLHP.setText(String.valueOf(combat.getrLostHP()));
     }//GEN-LAST:event_attack1ActionPerformed
 
     Battle combat = new Battle(190,45,28,160,40,25);
@@ -249,9 +267,11 @@ public class Combat extends javax.swing.JFrame {
     private javax.swing.JButton giveUp;
     private javax.swing.JLabel hakonmyo;
     private javax.swing.JLabel hakonmyoname;
+    private javax.swing.JLabel mLHP;
     private javax.swing.JLabel myHp;
     private javax.swing.JLabel nerite;
     private javax.swing.JLabel neriteName;
     private javax.swing.JLabel rHP;
+    private javax.swing.JLabel rLHP;
     // End of variables declaration//GEN-END:variables
 }
