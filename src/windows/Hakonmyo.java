@@ -92,6 +92,7 @@ public class Hakonmyo extends javax.swing.JFrame {
         info2.setOpaque(true);
         getContentPane().add(info2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 480, 460, 30));
 
+        info3.setBackground(new java.awt.Color(255, 255, 255));
         info3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         info3.setOpaque(true);
         getContentPane().add(info3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 510, 460, 30));
