@@ -190,7 +190,7 @@ public class Combat extends javax.swing.JFrame {
         rLHP.setText(String.valueOf(combat.getrLostHP()));
     }//GEN-LAST:event_attack1ActionPerformed
 
-    Battle combat = new Battle(190,45,28,160,40,25);
+    Battle combat = new Battle(190,45,28,160,36,25);
     public void endBattle(boolean v, boolean d){
         if(v==true){
             Victory window = new Victory();
