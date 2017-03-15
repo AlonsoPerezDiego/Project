@@ -184,7 +184,7 @@ public class Combat extends javax.swing.JFrame {
     }//GEN-LAST:event_attack2ActionPerformed
 
     private void attack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attack1ActionPerformed
-        combat.fight(25, enemyDamage());
+        combat.fight(29, enemyDamage());
         endBattle(combat.isVictory(),combat.isDefeat());
         mLHP.setText(String.valueOf(combat.getMyLostHP()));
         rLHP.setText(String.valueOf(combat.getrLostHP()));
