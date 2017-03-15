@@ -154,6 +154,25 @@ public class Combat extends javax.swing.JFrame {
             this.setVisible(false);
         }
     }
+    
+    public int enemyDamage(){
+        int select, damage = 0;
+        do{
+            select = (int)(Math.random()*10);
+        }while(select>3);
+        switch(select){
+            case 0: damage = 45;
+                    break;
+            case 1: damage = 35;
+                    break;
+            case 2: damage = 50;
+                    break;
+            case 3: damage = 45;
+                    break;
+        }
+        return damage;
+    }
+    
     /**
      * @param args the command line arguments
      */
