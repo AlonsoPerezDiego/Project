@@ -119,7 +119,7 @@ public class Combat extends javax.swing.JFrame {
 
         rLHP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         rLHP.setText("160");
-        getContentPane().add(rLHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, -1, -1));
+        getContentPane().add(rLHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, -1, -1));
 
         rHP.setBackground(new java.awt.Color(255, 255, 255));
         rHP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -147,7 +147,7 @@ public class Combat extends javax.swing.JFrame {
 
         background.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background.jpg"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 720));
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
