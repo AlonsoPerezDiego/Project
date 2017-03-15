@@ -14,8 +14,10 @@ public class Battle {
     private int myHP, myAttack, myDefense, myLostHP, rHP, rAttack, rDefense, rLostHP;
     private float myMultiplier, rMultiplier;
     private boolean victory, defeat;
-    
 
+    public Battle() {
+    }
+    
     public Battle(int myHP, int myAttack, int myDefense, int rHP, int rAttack, int rDefense) {
         this.myHP = myHP;
         this.myAttack = myAttack;
@@ -74,4 +76,29 @@ public class Battle {
             rMultiplier = (float)(Math.random()*10);
         }while(myMultiplier>1.25||myMultiplier<0.75||rMultiplier>1.25||rMultiplier<0.75);
     }
+
+    public int getMyHP() {
+        return myHP;
+    }
+
+    public int getMyLostHP() {
+        return myLostHP;
+    }
+
+    public int getrHP() {
+        return rHP;
+    }
+
+    public int getrLostHP() {
+        return rLostHP;
+    }
+
+    public boolean isVictory() {
+        return victory;
+    }
+
+    public boolean isDefeat() {
+        return defeat;
+    }
+    
 }
