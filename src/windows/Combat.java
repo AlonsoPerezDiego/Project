@@ -38,6 +38,10 @@ public class Combat extends javax.swing.JFrame {
         attack4 = new javax.swing.JButton();
         giveUp = new javax.swing.JButton();
         exit = new javax.swing.JButton();
+        rHP = new javax.swing.JLabel();
+        hakonmyoname = new javax.swing.JLabel();
+        myHp = new javax.swing.JLabel();
+        neriteName = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -107,6 +111,31 @@ public class Combat extends javax.swing.JFrame {
         });
         getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 10, -1, -1));
 
+        rHP.setBackground(new java.awt.Color(255, 255, 255));
+        rHP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        rHP.setText("jLabel3");
+        rHP.setOpaque(true);
+        getContentPane().add(rHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 100, 60));
+
+        hakonmyoname.setBackground(new java.awt.Color(255, 255, 255));
+        hakonmyoname.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        hakonmyoname.setText("Hakonmyo");
+        hakonmyoname.setOpaque(true);
+        getContentPane().add(hakonmyoname, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 190, 80));
+
+        myHp.setBackground(new java.awt.Color(255, 255, 255));
+        myHp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        myHp.setText("jLabel2");
+        myHp.setOpaque(true);
+        getContentPane().add(myHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 500, 120, 60));
+
+        neriteName.setBackground(new java.awt.Color(255, 255, 255));
+        neriteName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        neriteName.setText("Nerite");
+        neriteName.setOpaque(true);
+        getContentPane().add(neriteName, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 500, 180, 80));
+
+        background.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background.jpg"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 720));
 
@@ -124,24 +153,26 @@ public class Combat extends javax.swing.JFrame {
     }//GEN-LAST:event_exitActionPerformed
 
     private void attack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attack4ActionPerformed
-        // TODO add your handling code here:
+        combat.fight(30, enemyDamage());
+        endBattle(combat.isVictory(),combat.isDefeat());
     }//GEN-LAST:event_attack4ActionPerformed
 
     private void attack3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attack3ActionPerformed
-        
+        combat.fight(40, enemyDamage());
+        endBattle(combat.isVictory(),combat.isDefeat());
     }//GEN-LAST:event_attack3ActionPerformed
 
     private void attack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attack2ActionPerformed
-        // TODO add your handling code here:
+        combat.fight(45, enemyDamage());
+        endBattle(combat.isVictory(),combat.isDefeat());
     }//GEN-LAST:event_attack2ActionPerformed
 
     private void attack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attack1ActionPerformed
-        
-        
+        combat.fight(25, enemyDamage());
+        endBattle(combat.isVictory(),combat.isDefeat());
     }//GEN-LAST:event_attack1ActionPerformed
 
-    Battle combat = new Battle();
-    
+    Battle combat = new Battle(190,45,28,160,40,25);
     public void endBattle(boolean v, boolean d){
         if(v==true){
             Victory window = new Victory();
@@ -217,6 +248,10 @@ public class Combat extends javax.swing.JFrame {
     private javax.swing.JButton exit;
     private javax.swing.JButton giveUp;
     private javax.swing.JLabel hakonmyo;
+    private javax.swing.JLabel hakonmyoname;
+    private javax.swing.JLabel myHp;
     private javax.swing.JLabel nerite;
+    private javax.swing.JLabel neriteName;
+    private javax.swing.JLabel rHP;
     // End of variables declaration//GEN-END:variables
 }
