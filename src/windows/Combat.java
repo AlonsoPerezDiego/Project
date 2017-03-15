@@ -5,6 +5,8 @@
  */
 package windows;
 
+import classpackage.Battle;
+
 /**
  *
  * @author Diego
@@ -48,7 +50,8 @@ public class Combat extends javax.swing.JFrame {
         hakonmyo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Hakonmyo.png"))); // NOI18N
         getContentPane().add(hakonmyo, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 90, 260, 270));
 
-        attack1.setText("jButton1");
+        attack1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        attack1.setText("Water Gun");
         attack1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 attack1ActionPerformed(evt);
@@ -56,7 +59,8 @@ public class Combat extends javax.swing.JFrame {
         });
         getContentPane().add(attack1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 500, 220, 80));
 
-        attack2.setText("jButton2");
+        attack2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        attack2.setText("Hydro Pump");
         attack2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 attack2ActionPerformed(evt);
@@ -64,7 +68,8 @@ public class Combat extends javax.swing.JFrame {
         });
         getContentPane().add(attack2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 500, 220, 80));
 
-        attack3.setText("jButton3");
+        attack3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        attack3.setText("Water Pulse");
         attack3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 attack3ActionPerformed(evt);
@@ -72,7 +77,8 @@ public class Combat extends javax.swing.JFrame {
         });
         getContentPane().add(attack3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 580, 220, 80));
 
-        attack4.setText("jButton4");
+        attack4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        attack4.setText("Iron Tail");
         attack4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 attack4ActionPerformed(evt);
@@ -130,9 +136,24 @@ public class Combat extends javax.swing.JFrame {
     }//GEN-LAST:event_attack2ActionPerformed
 
     private void attack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attack1ActionPerformed
-        // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_attack1ActionPerformed
 
+    Battle combat = new Battle();
+    
+    public void endBattle(boolean v, boolean d){
+        if(v==true){
+            Victory window = new Victory();
+            window.setVisible(true);
+            this.setVisible(false);
+        }
+        if(d==true){
+            Defeat window = new Defeat();
+            window.setVisible(true);
+            this.setVisible(false);
+        }
+    }
     /**
      * @param args the command line arguments
      */
