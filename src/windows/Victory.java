@@ -42,7 +42,7 @@ public class Victory extends javax.swing.JFrame {
                 victoryMouseClicked(evt);
             }
         });
-        getContentPane().add(victory, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 170, 1290, 350));
+        getContentPane().add(victory, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 490, 330));
 
         exit.setBackground(new java.awt.Color(255, 0, 0));
         exit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
