@@ -6,6 +6,8 @@
 package windows;
 
 import classpackage.Info;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -45,6 +47,7 @@ public class Nerite extends javax.swing.JFrame {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

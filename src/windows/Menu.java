@@ -6,6 +6,13 @@
 package windows;
 
 import classpackage.Battle;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.File;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import static javax.sound.sampled.Clip.LOOP_CONTINUOUSLY;
+import static lbry.Lbry.fileNotFound;
 
 /**
  *
@@ -16,9 +23,21 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
+    Clip menuMusic;
     public Menu() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        menuMusic = null;
+        try{
+            menuMusic = AudioSystem.getClip();
+            menuMusic.open(AudioSystem.getAudioInputStream(new File("songs/MainSong.aiff")));
+            menuMusic.loop(LOOP_CONTINUOUSLY);
+        }catch(Exception ex){
+            fileNotFound();
+        }
+        if(menuMusic.isActive())
+            menuMusic.start();
     }
 
     /**
@@ -83,6 +102,7 @@ public class Menu extends javax.swing.JFrame {
         Characters window = new Characters();
         window.setVisible(true);
         this.setVisible(false);
+        menuMusic.stop();
     }//GEN-LAST:event_combatActionPerformed
 
     private void infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoActionPerformed

@@ -6,6 +6,13 @@
 package windows;
 
 import classpackage.Battle;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.File;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import static javax.sound.sampled.Clip.LOOP_CONTINUOUSLY;
+import static lbry.Lbry.fileNotFound;
 
 /**
  *
@@ -16,11 +23,23 @@ public class Combat extends javax.swing.JFrame {
     /**
      * Creates new form Combat
      */
+    Clip combatMusic;
     public Combat() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        combatMusic=null;
+        try{
+            combatMusic = AudioSystem.getClip();
+            combatMusic.open(AudioSystem.getAudioInputStream(new File("songs/ECSong.aiff")));
+            combatMusic.loop(LOOP_CONTINUOUSLY);
+        }catch(Exception ex){
+            fileNotFound();
+        }
+        if(combatMusic.isActive())
+            combatMusic.start();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -156,6 +175,7 @@ public class Combat extends javax.swing.JFrame {
         Defeat window = new Defeat();
         window.setVisible(true);
         this.setVisible(false);
+        combatMusic.stop();
     }//GEN-LAST:event_giveUpActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
@@ -184,7 +204,7 @@ public class Combat extends javax.swing.JFrame {
     }//GEN-LAST:event_attack2ActionPerformed
 
     private void attack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attack1ActionPerformed
-        combat.fight(29, enemyDamage());
+        combat.fight(26, enemyDamage());
         endBattle(combat.isVictory(),combat.isDefeat());
         mLHP.setText(String.valueOf(combat.getMyLostHP()));
         rLHP.setText(String.valueOf(combat.getrLostHP()));
@@ -196,11 +216,13 @@ public class Combat extends javax.swing.JFrame {
             Victory window = new Victory();
             window.setVisible(true);
             this.setVisible(false);
+            combatMusic.stop();
         }
         if(d==true){
             Defeat window = new Defeat();
             window.setVisible(true);
             this.setVisible(false);
+            combatMusic.stop();
         }
     }
     
@@ -256,7 +278,7 @@ public class Combat extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton attack1;
     private javax.swing.JButton attack2;

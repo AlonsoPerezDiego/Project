@@ -5,6 +5,12 @@
  */
 package windows;
 
+import java.io.File;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import static javax.sound.sampled.Clip.LOOP_CONTINUOUSLY;
+import static lbry.Lbry.fileNotFound;
+
 /**
  *
  * @author Diego
@@ -14,11 +20,24 @@ public class Characters extends javax.swing.JFrame {
     /**
      * Creates new form Characters
      */
+    Clip menuMusic = null;
     public Characters() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        
+        try{
+            menuMusic = AudioSystem.getClip();
+            menuMusic.open(AudioSystem.getAudioInputStream(new File("songs/MenuSong.aiff")));
+            menuMusic.loop(LOOP_CONTINUOUSLY);
+        }catch(Exception ex){
+            fileNotFound();
+        }
+        if(menuMusic.isActive())
+            menuMusic.start();
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -110,12 +129,14 @@ public class Characters extends javax.swing.JFrame {
         Menu window = new Menu();
         window.setVisible(true);
         this.setVisible(false);
+        menuMusic.stop();
     }//GEN-LAST:event_backActionPerformed
 
     private void boyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boyActionPerformed
         Combat window = new Combat();
         window.setVisible(true);
         this.setVisible(false);
+        menuMusic.stop();
     }//GEN-LAST:event_boyActionPerformed
 
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
@@ -126,6 +147,7 @@ public class Characters extends javax.swing.JFrame {
         Combat window = new Combat();
         window.setVisible(true);
         this.setVisible(false);
+        menuMusic.stop();
     }//GEN-LAST:event_girlActionPerformed
 
     /**

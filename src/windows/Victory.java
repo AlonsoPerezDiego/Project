@@ -5,6 +5,14 @@
  */
 package windows;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.File;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import static javax.sound.sampled.Clip.LOOP_CONTINUOUSLY;
+import static lbry.Lbry.fileNotFound;
+
 /**
  *
  * @author Diego
@@ -14,9 +22,23 @@ public class Victory extends javax.swing.JFrame {
     /**
      * Creates new form Victory
      */
+    
+    
     public Victory() {
+        Clip victoryMusic=null;
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        
+        try{
+            victoryMusic = AudioSystem.getClip();
+            victoryMusic.open(AudioSystem.getAudioInputStream(new File("songs/VictorySound.aiff")));
+            victoryMusic.loop(0);
+        }catch(Exception ex){
+            fileNotFound();
+        }
+        if(victoryMusic.isActive())
+            victoryMusic.start();
     }
 
     /**
@@ -64,6 +86,7 @@ public class Victory extends javax.swing.JFrame {
         Menu window = new Menu();
         window.setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_victoryMouseClicked
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed

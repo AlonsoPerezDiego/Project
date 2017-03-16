@@ -5,6 +5,11 @@
  */
 package windows;
 
+import java.io.File;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import static lbry.Lbry.fileNotFound;
+
 /**
  *
  * @author Diego
@@ -17,6 +22,17 @@ public class Defeat extends javax.swing.JFrame {
     public Defeat() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        Clip defeatMusic = null;
+        try{
+            defeatMusic = AudioSystem.getClip();
+            defeatMusic.open(AudioSystem.getAudioInputStream(new File("songs/DefeatSound.aiff")));
+            defeatMusic.loop(0);
+        }catch(Exception ex){
+            fileNotFound();
+        }
+        if(defeatMusic.isActive())
+            defeatMusic.start();
     }
 
     /**

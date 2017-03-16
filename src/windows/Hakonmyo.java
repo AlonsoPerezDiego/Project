@@ -6,6 +6,8 @@
 package windows;
 
 import classpackage.Info;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -24,7 +26,7 @@ public class Hakonmyo extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
