@@ -23,11 +23,10 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
-    Clip menuMusic;
+    public Clip menuMusic;
     public Menu() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
         menuMusic = null;
         try{
             menuMusic = AudioSystem.getClip();
@@ -109,6 +108,7 @@ public class Menu extends javax.swing.JFrame {
         Information window = new Information();
         window.setVisible(true);
         this.setVisible(false);
+        menuMusic.stop();
     }//GEN-LAST:event_infoActionPerformed
 
     /**
