@@ -7,6 +7,11 @@ package windows;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.io.File;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import static javax.sound.sampled.Clip.LOOP_CONTINUOUSLY;
+import static lbry.Lbry.fileNotFound;
 
 /**
  *
@@ -17,16 +22,23 @@ public class Information extends javax.swing.JFrame {
     /**
      * Creates new form Information
      */
+    Clip infoMusic;
     public Information() {
         initComponents();
         this.setLocationRelativeTo(null);
+        infoMusic = null;
+        try{
+            infoMusic = AudioSystem.getClip();
+            infoMusic.open(AudioSystem.getAudioInputStream(new File("songs/infoSong.aiff")));
+            infoMusic.loop(LOOP_CONTINUOUSLY);
+        }catch(Exception ex){
+            fileNotFound();
+        }
+        if(infoMusic.isActive())
+            infoMusic.start();
     }
 
-    public Image getIconImage() {
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("src/images/vs icon.jpg"));
-        return retValue;
-    }
-    
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -111,6 +123,7 @@ public class Information extends javax.swing.JFrame {
         Menu window = new Menu();
         window.setVisible(true);
         this.setVisible(false);
+        infoMusic.stop();
     }//GEN-LAST:event_backActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
@@ -121,12 +134,14 @@ public class Information extends javax.swing.JFrame {
         Nerite window = new Nerite();
         window.setVisible(true);
         this.setVisible(false);
+        infoMusic.stop();
     }//GEN-LAST:event_neriteBActionPerformed
 
     private void hakonmyoBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hakonmyoBActionPerformed
         Hakonmyo window = new Hakonmyo();
         window.setVisible(true);
         this.setVisible(false);
+        infoMusic.stop();
     }//GEN-LAST:event_hakonmyoBActionPerformed
 
     /**
