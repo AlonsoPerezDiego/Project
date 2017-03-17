@@ -20,21 +20,21 @@ public class Characters extends javax.swing.JFrame {
     /**
      * Creates new form Characters
      */
-    Clip menuMusic = null;
+    Clip characterMusic = null;
     public Characters() {
         initComponents();
         this.setLocationRelativeTo(null);
         
         
         try{
-            menuMusic = AudioSystem.getClip();
-            menuMusic.open(AudioSystem.getAudioInputStream(new File("songs/MenuSong.aiff")));
-            menuMusic.loop(LOOP_CONTINUOUSLY);
+            characterMusic = AudioSystem.getClip();
+            characterMusic.open(AudioSystem.getAudioInputStream(new File("songs/MenuSong.aiff")));
+            characterMusic.loop(LOOP_CONTINUOUSLY);
         }catch(Exception ex){
             fileNotFound();
         }
-        if(menuMusic.isActive())
-            menuMusic.start();
+        if(characterMusic.isActive())
+            characterMusic.start();
     }
 
     
@@ -129,14 +129,14 @@ public class Characters extends javax.swing.JFrame {
         Menu window = new Menu();
         window.setVisible(true);
         this.setVisible(false);
-        menuMusic.stop();
+        characterMusic.stop();
     }//GEN-LAST:event_backActionPerformed
 
     private void boyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boyActionPerformed
         Combat window = new Combat();
         window.setVisible(true);
         this.setVisible(false);
-        menuMusic.stop();
+        characterMusic.stop();
     }//GEN-LAST:event_boyActionPerformed
 
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
@@ -147,7 +147,7 @@ public class Characters extends javax.swing.JFrame {
         Combat window = new Combat();
         window.setVisible(true);
         this.setVisible(false);
-        menuMusic.stop();
+        characterMusic.stop();
     }//GEN-LAST:event_girlActionPerformed
 
     /**
